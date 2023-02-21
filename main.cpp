@@ -2,7 +2,7 @@
 using namespace std;
 
 //function to add letters to string
-void AddCharacterToString(string word[], int lengthOfString)
+void AddCharacterToString(char word[], int lengthOfString)
 {
 	int ascii;
 	for(int i=0; i<lengthOfString; i++)
@@ -17,10 +17,11 @@ void AddCharacterToString(string word[], int lengthOfString)
 			word[i] = char(ascii);
 		}
 	}
+	cout<<"\nLetter added";
 }
 
 //function to display string
-void DisplayString(string word[] ,int lengthOfString)
+void DisplayString(char word[] ,int lengthOfString)
 {
 	cout<<"\nTHE STRING IS : ";
 	for(int i =0; i<lengthOfString; i++)
@@ -38,8 +39,7 @@ int main()
 	lengthOfString = 5+(rand()%(20-5+1));
 	cout<<"\nlength is : "<<lengthOfString;
 	//creating string of with random length;
-	string word[lengthOfString];
-	cout<<"\nString created";
+	char word[lengthOfString];
 	//function call to add letters to string
 	AddCharacterToString(word , lengthOfString);
 	cout<<"\nletters added to string";
