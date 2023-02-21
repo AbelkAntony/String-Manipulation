@@ -45,5 +45,4 @@ int main()
 	cout<<"\nletters added to string";
 	//function call to dispaly string
 	DisplayString(word , lengthOfString);
-	return 0;
 }
