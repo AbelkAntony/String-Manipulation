@@ -1,48 +1,49 @@
 #include <iostream>
 using namespace std;
 
-//function to add letters to string
-void AddCharacterToString(char word[], int lengthOfString)
+//function to change case sensitive
+void ChangeCase(string word, int length)
 {
-	int ascii;
-	for(int i=0; i<lengthOfString; i++)
+	int temp;
+	for (int i=0;i<length;i++)
 	{
-		ascii = 65+(rand()%(122-65+1));
-		if(ascii>90 || ascii <97)
+		temp = int(word[i]);
+		if(temp>=97 && temp<=122)
 		{
-			i = i-1;
+			temp = temp - 32;
+			word[i] = char(temp);
 		}
-		else
+		else if (temp>=65 && temp<=90)
 		{
-			word[i] = char(ascii);
-		}
+			temp = temp + 32;
+			word[i] = char(temp);
+		}	
 	}
-	cout<<"\nLetter added";
-}
-
-//function to display string
-void DisplayString(char word[] ,int lengthOfString)
-{
-	cout<<"\nTHE STRING IS : ";
-	for(int i =0; i<lengthOfString; i++)
-	{
-		cout<<word[i]<<" ";	
-	}
+	cout<<"\nWORD AFTER CHANGING CASE";
+	cout<<endl<<endl<<word;
 }
 	
 int main() 
 {
-	srand(time(0));
-	//variable
-	int lengthOfString;
-	//randomly generating the length of string min length 5 and max length 20
-	lengthOfString = 5+(rand()%(20-5+1));
-	cout<<"\nlength is : "<<lengthOfString;
-	//creating string of with random length;
-	char word[lengthOfString];
-	//function call to add letters to string
-	AddCharacterToString(word , lengthOfString);
-	cout<<"\nletters added to string";
-	//function call to dispaly string
-	DisplayString(word , lengthOfString);
+	int length;
+	int option;
+	string word;
+	cout<<"\nENTER A WORD : ";
+	cin>>word;
+	cout<<"\nDEFAULT WORD";
+	cout<<"\n\n"<<word;
+	length = word.size();
+	cout<<"\nOPTION";
+	cout<<"\n1. CHANGE CASE";
+	cout<<"\nENTER YOUR CHOICE : ";
+	cin>>option;
+	switch(option)
+	{
+		case 1:	
+		ChangeCase( word, length);
+		break;
+		default:
+		cout<<"\nINVALID OPTION";
+		break;
+	}
 }
