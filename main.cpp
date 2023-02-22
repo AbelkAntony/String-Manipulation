@@ -109,6 +109,25 @@ void ReverseVowel(string word ,int length)
 	cout<<"\nWORD AFTER REVERSED VOWEL : "<<tempWord;
 	
 }
+
+//function to sort string in alphabetic order
+void SortString(string word ,int length)
+{
+	char temp;
+	for(int i=0;i<length; i++)
+	{
+		for(int j =i+1;j<length;j++)
+		{
+			if(word[i]>word[j])
+			{
+				temp = word[i];
+				word[i] = word[j];
+				word[j] = temp;
+			}
+		}
+	}
+	cout<<"\nSTRING AFTER SORTED = "<<word;
+}
 	
 int main() 
 {
@@ -126,6 +145,7 @@ int main()
 	cout<<"\n2. CREATE A NEW STRING WITH NEXT LETTER";
 	cout<<"\n3. GET THE COUT OF EACH CHARACTER PRESENT";
 	cout<<"\n4. REVERSE VOWELS ONLY";
+	cout<<"\n5. SORT THE ARRAY IN ALPHABETIC ORDER";
 	cout<<"\nENTER YOUR CHOICE : ";
 	cin>>option;
 	switch(option)
@@ -141,6 +161,9 @@ int main()
 		break;
 		case 4:
 		ReverseVowel(word , length);
+		break;
+		case 5:
+		SortString(word , length);
 		break;
 		default:
 		cout<<"\nINVALID OPTION";
