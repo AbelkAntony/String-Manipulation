@@ -54,7 +54,33 @@ void StringWithNextLetter(string word,int length)
 //function to get the cout of duplicate
 void GetCoutOfLetter(string word ,int length)
 {
-	
+	string tempWord = word;
+	int count = 0;
+	while(length>0)
+	{
+		for(int i=0; i<length; i++)
+		{
+			if(tempWord[0]==tempWord[i])	
+			{
+				count +=1;
+			}
+		}
+		cout<<endl<<tempWord[0]<<" REPEATS "<<count<<" TIMES";
+		count = 0;
+		char temp = tempWord[0];
+		for(int j=0; j<length; j++)
+		{
+			if(tempWord[j]==temp)
+			{
+				for(int k=j;k<length;k++)
+				{
+					tempWord[k]= tempWord[k+1];
+				}
+				j--;
+				length--;
+			}
+		}
+	}
 }
 	
 int main() 
