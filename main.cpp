@@ -82,6 +82,33 @@ void GetCoutOfLetter(string word ,int length)
 		}
 	}
 }
+
+//function to reverse vowel only
+void ReverseVowel(string word ,int length)
+{
+	string tempWord = word;
+	int positionOfVowels[length];
+	int reversedPosition[length];
+	int position=0;
+	for (int i=0;i<length;i++)
+	{
+		if(tempWord[i]=='a'||tempWord[i]=='A'||tempWord[i]=='e'||tempWord[i]=='E'||tempWord[i]=='i'||tempWord[i]=='I'||tempWord[i]=='o'||tempWord[i]=='O'||tempWord[i]=='u'||tempWord[i]=='U')
+		{
+			positionOfVowels[position]=i;
+			position++;
+		}
+	}
+	for(int i=0;i<position;i++)
+	{
+		reversedPosition[position-1-i]	= positionOfVowels[i];
+	}
+	for(int i=0;i<position;i++)
+	{
+		tempWord[reversedPosition[i]]=word[positionOfVowels[i]] ;
+	}
+	cout<<"\nWORD AFTER REVERSED VOWEL : "<<tempWord;
+	
+}
 	
 int main() 
 {
@@ -98,6 +125,7 @@ int main()
 	cout<<"\n1. CHANGE CASE";
 	cout<<"\n2. CREATE A NEW STRING WITH NEXT LETTER";
 	cout<<"\n3. GET THE COUT OF EACH CHARACTER PRESENT";
+	cout<<"\n4. REVERSE VOWELS ONLY";
 	cout<<"\nENTER YOUR CHOICE : ";
 	cin>>option;
 	switch(option)
@@ -110,6 +138,9 @@ int main()
 		break;
 		case 3:
 		GetCoutOfLetter(word , length);
+		break;
+		case 4:
+		ReverseVowel(word , length);
 		break;
 		default:
 		cout<<"\nINVALID OPTION";
