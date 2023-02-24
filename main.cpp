@@ -1,6 +1,28 @@
 #include <iostream>
 using namespace std;
 
+//
+void RandomString()
+{
+	srand(time(0));
+	int length = 5 + rand()%6;
+
+	string randomString = "";
+	
+	for(int i=0; i<length; i++)
+	{
+		bool isCaps = rand() % 2;
+
+		char min = isCaps?'A':'a';
+		char max = isCaps?'Z':'z';
+
+		char letter = min +rand() % (max - min + 1);
+		randomString += letter;
+	}
+	cout<<randomString<<endl;
+	//return randomString;
+}
+
 //function to change case sensitive
 void ChangeCase(string word, int length)
 {
