@@ -10,3 +10,10 @@ There will show a list of functions to perform on that entered word
 
 
 Here is my replit link : https://replit.com/@mrabelantony/String-Manipulation
+
+
+![Capture1](/ScreenShots/1.png)
+![Capture1](/ScreenShots/2.png)
+![Capture1](/ScreenShots/3.png)
+![Capture1](/ScreenShots/4.png)
+![Capture1](/ScreenShots/5.png)
